@@ -19,15 +19,22 @@ def person_is_seller(name):
     return name[-1] == 'm'
 
 # Step 2. BFS - Use deque
-search_queue = deque()
-search_queue += graph["you"]
+# Step 3. Prevent Searching Repeat
+def search(name):
+    search_queue = deque()
+    search_queue += graph[name]
+    searched = []
 
-while search_queue:
-    person = search_queue.popleft()
-    if person_is_seller(person):
-        print(person + " is a mango seller!")
-        break
-    else:
-        search_queue += graph[person]
+    while search_queue:
+        person = search_queue.popleft()
+        if not person in searched:
+            if person_is_seller(person):
+                print(person + " is a mango seller!")
+                break
+            else:
+                search_queue += graph[person]
+                searched.append(person)
+
+search("you")
 
 
