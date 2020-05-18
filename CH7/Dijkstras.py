@@ -8,7 +8,7 @@ graph = {}
 
 graph["start"] = {}
 graph["start"]["a"] = 6
-graph["start"]["b"] = 5
+graph["start"]["b"] = 2
 
 graph["a"] = {}
 graph["a"]["fin"] = 1
@@ -23,7 +23,7 @@ graph["fin"] = {}
 infinity = maximum_float()
 costs = {}
 costs["a"] = 6
-costs["b"] = 5
+costs["b"] = 2
 costs["fin"] = infinity
 
 # Step3. define parent hash table
@@ -53,7 +53,7 @@ def find_lowest_cost_path():
         cost = costs[node]
         neighbors = graph[node]
         for n in neighbors.keys():
-            new_cost = neighbors[n]
+            new_cost = cost + neighbors[n]
             if costs[n] > new_cost:
                 costs[n] = new_cost
                 parents[n] = node
@@ -78,10 +78,12 @@ def print_path():
     path.append("start")
     path.reverse()
     print(path[1:])
+    
 
 
 find_lowest_cost_path()
 print_path()
+print("path total cost:", costs["fin"])
     
 
 
