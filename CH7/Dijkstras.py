@@ -16,3 +16,19 @@ graph["b"]["fin"] = 5
 
 graph["fin"] = {}
 
+# Step2. define cost hash table
+infinity = float("inf")
+costs = {}
+costs["a"] = 6
+costs["b"] = 5
+costs["fin"] = infinity
+
+#Step3. define parent hash table
+parents = {}
+parents["a"] = "start"
+parents["b"] = "start"
+parents["fin"] = None
+
+#Step4. prepare processed hash table
+processed = {}
+
