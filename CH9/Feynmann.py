@@ -9,8 +9,8 @@ compare_string2 = "HISH"
 array = np.zeros((len(compare_string1),len(compare_string2)), dtype=int)
 
 # Compare
-for i in range(1, len(compare_string1)):
-    for j in range(1, len(compare_string2)):
+for i in range(0, len(compare_string1)):
+    for j in range(0, len(compare_string2)):
         if(compare_string1[i] == compare_string2[j]):
             array[i][j] = array[i-1][j-1] + 1
         else:
