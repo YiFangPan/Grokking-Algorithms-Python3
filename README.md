@@ -1,4 +1,5 @@
-## Algorithms: An Illustrated Guide for Programmers and Other Curious People
+## 
+Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People
 
 * 中文書名：寫程式前就該懂的演算法
 * Python Version: 3.8.2
